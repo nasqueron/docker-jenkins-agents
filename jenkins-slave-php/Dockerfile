@@ -27,6 +27,7 @@ RUN apt-get update && apt-get install -y \
     chmod +x pdepend.phar && ln -s /opt/pdepend.phar /usr/local/bin/pdepend && \
     wget http://static.phpmd.org/php/latest/phpmd.phar && \
     chmod +x /opt/phpmd.phar && ln -s /opt/phpmd.phar /usr/local/bin/phpmd && \
+    pecl install xdebug && \
     git clone https://github.com/phacility/libphutil.git && \
     git clone https://github.com/phacility/arcanist.git && \
     ln -s /opt/arcanist/bin/arc /usr/local/bin/arc && \
@@ -35,6 +36,8 @@ RUN apt-get update && apt-get install -y \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale && \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
+
+COPY files /
 
 #
 # Docker properties
