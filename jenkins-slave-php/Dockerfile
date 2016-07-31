@@ -31,6 +31,9 @@ RUN apt-get update && apt-get install -y \
     git clone https://github.com/phacility/libphutil.git && \
     git clone https://github.com/phacility/arcanist.git && \
     ln -s /opt/arcanist/bin/arc /usr/local/bin/arc && \
+    curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g bower gulp && \
     mkdir -p /var/run/sshd && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     echo 'LANG="en_US.UTF-8"' > /etc/default/locale && \
