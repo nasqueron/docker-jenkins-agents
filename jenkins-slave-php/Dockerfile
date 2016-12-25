@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
             openjdk-7-jdk ant openssh-server openssh-client locales \
             mercurial subversion \
             --no-install-recommends && rm -r /var/lib/apt/lists/* && \
-    cd /opt && wget https://phar.phpunit.de/phpunit.phar && \
+    cd /opt && wget -O phpunit.phar https://phar.phpunit.de/phpunit-5.7.phar && \
     chmod +x phpunit.phar && ln -s /opt/phpunit.phar /usr/local/bin/phpunit && \
     wget https://phar.phpunit.de/phpcpd.phar && \
     chmod +x phpcpd.phar && ln -s /opt/phpcpd.phar /usr/local/bin/phpcpd && \
@@ -34,19 +34,13 @@ RUN apt-get update && apt-get install -y \
     curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g bower gulp && \
-    mkdir -p /var/run/sshd && \
-    sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-    echo 'LANG="en_US.UTF-8"' > /etc/default/locale && \
-    dpkg-reconfigure --frontend=noninteractive locales && \
-    update-locale LANG=en_US.UTF-8
+    mkdir -p /var/run/sshd
 
 COPY files /
 
 #
 # Docker properties
 #
-
-ENV LANG en_US.UTF-8
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
