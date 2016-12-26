@@ -27,10 +27,14 @@ RUN apt-get update && apt-get install -y \
     chmod +x pdepend.phar && ln -s /opt/pdepend.phar /usr/local/bin/pdepend && \
     wget http://static.phpmd.org/php/latest/phpmd.phar && \
     chmod +x /opt/phpmd.phar && ln -s /opt/phpmd.phar /usr/local/bin/phpmd && \
-    pecl install xdebug && \
+    wget https://github.com/etsy/phan/releases/download/0.7/phan.phar && \
+    chmod +x /opt/phan.phar && ln -s /opt/phan.phar /usr/local/bin/phan && \
     git clone https://github.com/phacility/libphutil.git && \
     git clone https://github.com/phacility/arcanist.git && \
     ln -s /opt/arcanist/bin/arc /usr/local/bin/arc && \
+    pecl install xdebug && \
+    git clone https://github.com/nikic/php-ast.git && \
+    cd /opt/php-ast && phpize && ./configure && make && make install && \
     curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g bower gulp && \
