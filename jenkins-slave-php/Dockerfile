@@ -9,8 +9,10 @@ MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-w
 # Prepare the container
 #
 
-RUN apt-get update && apt-get install -y \
-            openjdk-7-jdk ant openssh-server openssh-client locales \
+RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list && \
+    apt-get update && apt-get install -y -t jessie-backports openjdk-8-jdk \
+            --no-install-recommends && \
+    apt-get install -y ant openssh-server openssh-client locales \
             mercurial subversion \
             --no-install-recommends && rm -r /var/lib/apt/lists/* && \
     cd /opt && wget -O phpunit.phar https://phar.phpunit.de/phpunit-5.7.phar && \
