@@ -28,3 +28,5 @@ ENV TOOLCHAIN=nightly
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $TOOLCHAIN && \
     /home/app/.cargo/bin/rustup component add clippy-preview --toolchain=nightly && \
     /home/app/.cargo/bin/rustup component add rustfmt-preview --toolchain=nightly
+
+USER root
