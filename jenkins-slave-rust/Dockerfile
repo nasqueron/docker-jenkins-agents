@@ -20,13 +20,17 @@ RUN apt-get update && \
     mkdir /home/app && \
     useradd -u 431 -r -g app -d /home/app -s /bin/sh -c "Default application account" app && \
     chown -R app:app /home/app && \
-    chmod 711 /home/app
+    chmod 711 /home/app && \
+    mkdir /usr/local/cargo /usr/local/multirust && \
+    chown -R app:app /usr/local/cargo /usr/local/multirust
+
+ENV TOOLCHAIN=nightly CARGO_HOME=/usr/local/cargo RUSTUP_HOME=/usr/local/multirust
 
 USER app
-ENV TOOLCHAIN=nightly
-
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $TOOLCHAIN && \
-    /home/app/.cargo/bin/rustup component add clippy-preview --toolchain=nightly && \
-    /home/app/.cargo/bin/rustup component add rustfmt-preview --toolchain=nightly
+    /usr/local/cargo/bin/rustup install $TOOLCHAIN && \
+    /usr/local/cargo/bin/rustup default $TOOLCHAIN && \
+    /usr/local/cargo/bin/rustup component add clippy-preview --toolchain=$TOOLCHAIN && \
+    /usr/local/cargo/bin/rustup component add rustfmt-preview --toolchain=$TOOLCHAIN
 
 USER root
