@@ -39,7 +39,7 @@ RUN echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/so
     cd /opt/php-ast && phpize && ./configure && make && make install && \
     curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
     apt-get install -y nodejs && \
-    npm install -g bower gulp && \
+    npm install -g bower gulp csslint jsonlint jshint jscs eslint && \
     mkdir -p /var/run/sshd
 
 COPY files /
