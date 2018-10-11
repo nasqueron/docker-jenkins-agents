@@ -36,3 +36,19 @@ This image contains:
   * PHPMD
 * Code review:
   * Arcanist
+
+#### nasqueron/jenkins-slave-node
+
+This image contains:
+
+* The software required by Jenkins:
+  * an OpenSSH server
+  * Java
+  * ant
+* Version control:
+  * Git
+* Node:
+  * Node 9.x
+  * PhantomJS
+  * node-sass
+  * Spectacle
