@@ -17,6 +17,7 @@ RUN apt-get update && \
     apt-get autoremove && apt-get clean && \
     npm install --unsafe-perm -g node-sass && \
     npm install --unsafe-perm -g spectacle-docs && \
+    npm install -g yarn && \
     groupadd -r app -g 433 && \
     mkdir /home/app && \
     useradd -u 431 -r -g app -d /home/app -s /bin/sh -c "Default application account" app && \
