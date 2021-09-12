@@ -2,7 +2,7 @@
 # Nasqueron - Jenkins agent Docker image, not customized
 #
 
-FROM debian:stretch
+FROM debian:bullseye
 MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-win.org>
 
 #
@@ -10,7 +10,7 @@ MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-w
 #
 
 RUN apt-get update && apt-get install -y \
-            openjdk-8-jdk ant openssh-server openssh-client locales \
+            openjdk-17-jdk ant openssh-server openssh-client locales \
             --no-install-recommends && rm -r /var/lib/apt/lists/* && \
     mkdir -p /var/run/sshd && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \

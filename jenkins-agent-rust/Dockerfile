@@ -13,7 +13,7 @@ MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-w
 
 RUN apt-get update && \
     apt-get install -y build-essential cmake git curl nano vim file \
-                   libpq-dev libsqlite-dev pkgconf sudo xutils-dev openssl \
+                   libpq-dev libsqlite3-dev pkgconf sudo xutils-dev openssl \
                    strace gdb libssl-dev wget libpcre3-dev && \
     apt-get autoremove && apt-get clean && \
     groupadd -r app -g 433 && \
