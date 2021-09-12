@@ -1,5 +1,5 @@
 #
-# Nasqueron - Jenkins slave Docker image for PHP applications
+# Nasqueron - Jenkins agent Docker image for PHP applications
 #
 
 FROM nasqueron/php-cli

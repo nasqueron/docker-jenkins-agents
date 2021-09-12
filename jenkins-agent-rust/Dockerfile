@@ -1,8 +1,8 @@
 #
-# Nasqueron - Jenkins slave Docker image for Rust applications
+# Nasqueron - Jenkins agent Docker image for Rust applications
 #
 
-FROM nasqueron/jenkins-slave-barebone
+FROM nasqueron/jenkins-agent-barebone
 MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-win.org>
 
 #

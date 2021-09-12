@@ -1,9 +1,9 @@
-### Docker images for Jenkins slaves
+### Docker images for Jenkins agents
 
-This repository offers Dockerfile to build images to run Jenkins slaves
+This repository offers Dockerfile to build images to run Jenkins agents
 for CI and CD purposes.
 
-#### nasqueron/jenkins-slave-barebone
+#### nasqueron/jenkins-agent-barebone
 
 This image contains only what's required by Jenkins:
 
@@ -11,7 +11,7 @@ This image contains only what's required by Jenkins:
 * Java
 * ant
 
-#### nasqueron/jenkins-slave-php
+#### nasqueron/jenkins-agent-php
 
 This image contains:
 
@@ -37,7 +37,7 @@ This image contains:
 * Code review:
   * Arcanist
 
-#### nasqueron/jenkins-slave-node
+#### nasqueron/jenkins-agent-node
 
 This image contains:
 

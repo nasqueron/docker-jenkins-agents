@@ -1,5 +1,5 @@
 #
-# Nasqueron - Jenkins slave Docker image, not customized
+# Nasqueron - Jenkins agent Docker image, not customized
 #
 
 FROM debian:stretch

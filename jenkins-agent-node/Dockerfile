@@ -1,8 +1,8 @@
 #
-# Nasqueron - Jenkins slave Docker image for Node applications
+# Nasqueron - Jenkins agent Docker image for Node applications
 #
 
-FROM nasqueron/jenkins-slave-barebone
+FROM nasqueron/jenkins-agent-barebone
 MAINTAINER Sébastien Santoro aka Dereckson <dereckson+nasqueron-docker@espace-win.org>
 
 #
