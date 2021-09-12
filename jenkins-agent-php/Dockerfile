@@ -22,7 +22,7 @@ RUN apt-get update && \
     chmod +x phploc.phar && ln -s /opt/phploc.phar /usr/local/bin/phploc && \
     wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
     chmod +x phpcs.phar && ln -s /opt/phpcs.phar /usr/local/bin/phpcs && \
-    wget http://phpdox.de/releases/phpdox.phar && \
+    wget -O phpdox.phar https://github.com/theseer/phpdox/releases/download/0.12.0/phpdox-0.12.0.phar && \
     chmod +x phpdox.phar && ln -s /opt/phpdox.phar /usr/local/bin/phpdox && \
     wget https://github.com/pdepend/pdepend/releases/download/2.8.0/pdepend.phar && \
     chmod +x pdepend.phar && ln -s /opt/pdepend.phar /usr/local/bin/pdepend && \
