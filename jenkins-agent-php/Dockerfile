@@ -14,7 +14,7 @@ RUN apt-get update && \
             mercurial subversion \
             openjdk-11-jdk \
             --no-install-recommends && rm -r /var/lib/apt/lists/* && \
-    cd /opt && wget -O phpunit.phar https://phar.phpunit.de/phpunit-9.3.phar && \
+    cd /opt && wget -O phpunit.phar https://phar.phpunit.de/phpunit-9.5.phar && \
     chmod +x phpunit.phar && ln -s /opt/phpunit.phar /usr/local/bin/phpunit && \
     wget https://phar.phpunit.de/phpcpd.phar && \
     chmod +x phpcpd.phar && ln -s /opt/phpcpd.phar /usr/local/bin/phpcpd && \
