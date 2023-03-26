@@ -48,7 +48,6 @@ This image contains:
 * Version control:
   * Git
 * Node:
-  * Node 9.x
-  * PhantomJS
+  * Node 19.x
   * node-sass
   * Spectacle
