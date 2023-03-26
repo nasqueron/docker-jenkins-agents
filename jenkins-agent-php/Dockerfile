@@ -22,8 +22,8 @@ RUN apt-get update && \
     chmod +x phploc.phar && ln -s /opt/phploc.phar /usr/local/bin/phploc && \
     wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && \
     chmod +x phpcs.phar && ln -s /opt/phpcs.phar /usr/local/bin/phpcs && \
-    wget -O phpdox.phar https://github.com/theseer/phpdox/releases/download/0.12.0/phpdox-0.12.0.phar && \
-    chmod +x phpdox.phar && ln -s /opt/phpdox.phar /usr/local/bin/phpdox && \
+    git clone --depth 1 https://github.com/nasqueron/phpdox && \
+    (cd phpdox && composer update) && ln -s /opt/phpdox/phpdox /usr/local/bin/phpdox && \
     wget https://github.com/pdepend/pdepend/releases/download/2.8.0/pdepend.phar && \
     chmod +x pdepend.phar && ln -s /opt/pdepend.phar /usr/local/bin/pdepend && \
     wget https://github.com/phpmd/phpmd/releases/download/2.9.1/phpmd.phar && \
