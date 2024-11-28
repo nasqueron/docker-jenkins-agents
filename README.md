@@ -24,8 +24,9 @@ This image contains:
   * Mercurial
   * Subversion
 * PHP:
-  * PHP 5
+  * PHP 8.2
   * Composer
+* Node 20
 * The usual CI tools described in jenkins-php.org:
   * PHPUnit
   * PHP_CodeSniffer
